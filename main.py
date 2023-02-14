@@ -26,10 +26,9 @@ def find_mismatch(text):
             pass
         
     if not opening_brackets_stack:
-        print(opening_brackets_stack[0].position)
-    else:
         print("Success")
-        
+    else:
+        print(opening_brackets_stack[0].position)
 
 def main():
     text = input()
