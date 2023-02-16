@@ -32,8 +32,8 @@ def find_mismatch(text):
 def main():
     text = input()
     if I in text:
-    mismatch = find_mismatch(text)
-    print(mismatch) #izvade 
+        mismatch = find_mismatch(text)
+        print(mismatch) #izvade 
 
 
 if __name__ == "__main__":
