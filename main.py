@@ -14,13 +14,13 @@ def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
-            opening_brackets_stack.append(Bracket(next,i+1)) # Pievieno klāt nākamo 1 vērtību 
+            opening_brackets_stack.append(Bracket(next,i + 1)) # Pievieno klāt nākamo 1 vērtību 
             
 
 
         if next in ")]}":
             if not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next): # Iet pa vienu vienību pa kreisi
-                return i+1 
+                return i + 1 
             opening_brackets_stack.pop()   # Izdzēš pēdējo vērtību, kas tika pievienota
             
 
@@ -42,5 +42,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    
