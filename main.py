@@ -14,30 +14,30 @@ def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
-            opening_brackets_stack.append(Bracket(next,i+1)) # pievieno klāt nākamo vērtību (tikai vienu)
+            opening_brackets_stack.append(Bracket(next,i+1)) # Pievieno klāt nākamo 1 vērtību 
             
 
 
         if next in ")]}":
-            if not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next): # iet pa vienu vienību pa kreisi
-                return i+1
-            opening_brackets_stack.pop()   
+            if not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char,next): # Iet pa vienu vienību pa kreisi
+                return i+1 
+            opening_brackets_stack.pop()   # Izdzēš pēdējo vērtību, kas tika pievienota
             
 
 
-    if opening_brackets_stack:
-        return opening_brackets_stack[0].position
+    if opening_brackets_stack: # Ja ir kāda no neaizvērtām iekavām, tad
+        return opening_brackets_stack[0].position # nosaka, kurā pozīcijā/vietā tā atrodas un izvada numuru
     else:
-        return "Success"
+        return "Success" # Pretējā gadījumā izvada Success, ja ir aizvērtas visas iekavas
 
 
 
 def main():
-    text = input()
-    if "I" in text:
-        text = input()
+    text = input() # Pirmā ievade
+    if "I" or "F" in text: # Pārbauda, vai ievadītais teksts satur burtu "I" vai "F"
+        text = input() # Otrā ievade
         mismatch = find_mismatch(text)
-        print(mismatch) #izvade 
+        print(mismatch) # Izvada rezultātu 
 
 
 if __name__ == "__main__":
