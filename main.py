@@ -34,7 +34,7 @@ def main():
     text = input()
     mismatch = find_mismatch(text)
     # Printing answer, write your code here
-    print(mismatch) #izvade
+    print(mismatch) #izvade u
 
 
 if __name__ == "__main__":
